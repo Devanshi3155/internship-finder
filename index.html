@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FreshIntern - Internships for freshers</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip-link" href="#results">Skip to internships</a>
+
+  <header class="topbar">
+    <div class="wrap bar">
+      <div class="logo">Fresh<span>Intern</span></div>
+      <p class="tagline">Internships for freshers and final year students</p>
+    </div>
+  </header>
+
+  <div class="searchband">
+    <form class="wrap searchform" id="filters" role="search" aria-label="Search internships">
+      <div class="f f-wide">
+        <label for="search">Role, company or skill</label>
+        <input id="search" type="search" placeholder="e.g. React, Python, design">
+      </div>
+      <div class="f">
+        <label for="domain">Domain</label>
+        <select id="domain"><option value="">All domains</option></select>
+      </div>
+      <div class="f">
+        <label for="mode">Work mode</label>
+        <select id="mode">
+          <option value="">Any</option>
+          <option>Remote</option>
+          <option>Hybrid</option>
+          <option>On-site</option>
+        </select>
+      </div>
+      <div class="f f-check">
+        <label><input id="savedOnly" type="checkbox"> Saved only</label>
+        <button type="button" id="clear" class="linkbtn">Reset</button>
+      </div>
+    </form>
+  </div>
+
+  <main class="wrap">
+    <h1 id="results-title" class="count" tabindex="-1">Latest internships</h1>
+    <p id="status" class="status" role="status" aria-live="polite"></p>
+    <div id="message" class="message" hidden></div>
+    <ul id="results" class="list"></ul>
+  </main>
+
+  <footer class="wrap foot">Practice project. All companies and listings are made up.</footer>
+  <script src="app.js"></script>
+</body>
+</html>

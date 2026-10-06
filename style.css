@@ -1,0 +1,87 @@
+:root {
+  --navy: #1b2a49;
+  --orange: #e8590c;
+  --orange-dark: #c64a08;
+  --bg: #f2f3f5;
+  --line: #dcdfe4;
+  --text: #222;
+  --grey: #5f6670;
+  --link: #1757b8;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--text); font: 16px/1.5 Arial, Helvetica, sans-serif; }
+.wrap { width: min(980px, 100% - 24px); margin: 0 auto; }
+h1 { margin: 0; }
+:focus-visible { outline: 3px solid var(--orange); outline-offset: 2px; }
+
+.skip-link { position: absolute; left: 8px; top: -50px; background: #000; color: #fff; padding: 8px 12px; }
+.skip-link:focus { top: 8px; }
+
+/* top bar */
+.topbar { background: var(--navy); color: #fff; }
+.bar { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 12px 0; flex-wrap: wrap; }
+.logo { font-size: 1.5rem; font-weight: bold; }
+.logo span { color: #ff9248; }
+.tagline { margin: 0; font-size: .9rem; color: #c9d1e3; }
+
+/* search band */
+.searchband { background: #fff; border-bottom: 3px solid var(--orange); padding: 14px 0; }
+.searchform { display: grid; gap: 10px; grid-template-columns: 1fr; align-items: end; }
+.f { display: flex; flex-direction: column; gap: 3px; }
+label { font-size: .85rem; font-weight: bold; color: var(--grey); }
+input[type="search"], select {
+  padding: 10px; font: inherit; border: 1px solid #98a0ab; border-radius: 3px; background: #fff; width: 100%;
+}
+.f-check { flex-direction: row; justify-content: space-between; align-items: center; padding-bottom: 8px; }
+.f-check label { font-size: .95rem; color: var(--text); font-weight: normal; }
+.linkbtn { background: none; border: 0; color: var(--link); text-decoration: underline; cursor: pointer; font: inherit; }
+
+@media (min-width: 640px) {
+  .searchform { grid-template-columns: 1fr 1fr; }
+  .f-wide { grid-column: 1 / -1; }
+}
+@media (min-width: 900px) {
+  .searchform { grid-template-columns: 2fr 1fr 1fr auto; }
+  .f-wide { grid-column: auto; }
+}
+
+/* result list */
+.count { font-size: 1.3rem; margin-top: 20px; }
+.status { color: var(--grey); margin: 2px 0 12px; font-size: .9rem; }
+.list { list-style: none; margin: 0 0 24px; padding: 0; background: #fff; border: 1px solid var(--line); }
+.list li { border-bottom: 1px solid var(--line); }
+.list li:last-child { border-bottom: 0; }
+
+.job { display: grid; grid-template-columns: 52px 1fr; gap: 12px; padding: 14px; }
+.logobox {
+  width: 52px; height: 52px; border-radius: 4px; color: #fff;
+  display: flex; align-items: center; justify-content: center; font-size: 1.4rem; font-weight: bold;
+}
+.job h2 { font-size: 1.05rem; margin: 0; color: var(--link); }
+.company { margin: 0; color: var(--grey); font-size: .95rem; }
+.info { margin: 6px 0 0; font-size: .9rem; color: var(--text); }
+.info b { color: #0b6b3a; }
+.skills { margin: 4px 0 0; font-size: .85rem; color: var(--grey); }
+.posted { font-size: .8rem; color: var(--grey); margin: 6px 0 0; }
+.about { margin: 8px 0 0; padding: 8px 10px; background: var(--bg); font-size: .92rem; border-left: 3px solid var(--orange); }
+
+.actions { margin-top: 10px; display: flex; gap: 8px; flex-wrap: wrap; }
+.btn { padding: 7px 14px; font: inherit; font-size: .9rem; border-radius: 3px; cursor: pointer; border: 1px solid var(--navy); background: #fff; color: var(--navy); }
+.btn:hover { background: #eef1f7; }
+.btn.primary { background: var(--orange); border-color: var(--orange); color: #fff; }
+.btn.primary:hover { background: var(--orange-dark); }
+.btn[aria-pressed="true"] { background: var(--navy); color: #fff; }
+
+/* empty / error */
+.message { background: #fff; border: 1px solid var(--line); padding: 24px 16px; text-align: center; margin-bottom: 24px; }
+.message h2 { margin: 0 0 6px; font-size: 1.1rem; }
+.message p { margin: 0 0 12px; color: var(--grey); }
+.message.error { border-left: 4px solid #b00020; }
+
+.foot { color: var(--grey); font-size: .85rem; padding-bottom: 24px; }
+
+@media (min-width: 640px) {
+  .job { grid-template-columns: 64px 1fr; padding: 16px; }
+  .logobox { width: 64px; height: 64px; font-size: 1.7rem; }
+}
